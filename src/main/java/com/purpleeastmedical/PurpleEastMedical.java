@@ -1,5 +1,6 @@
 package com.purpleeastmedical;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -12,6 +13,8 @@ import org.springframework.core.env.Environment;
  */
 
 @SpringBootApplication
+// 扫描mapper文件
+@MapperScan("com.purpleeastmedical.mapper")
 public class PurpleEastMedical {
     public static void main(String[] args) {
         ConfigurableApplicationContext run = SpringApplication.run(PurpleEastMedical.class, args);

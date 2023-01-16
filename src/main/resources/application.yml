@@ -1,7 +1,7 @@
 server:
   port: 8849
   servlet:
-    context-path: /pemedical
+    context-path: /pem
 spring:
   #Reids配置
   redis:
@@ -18,7 +18,7 @@ spring:
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC&allowMultiQueries=true
+    url: jdbc:mysql://localhost:3306/purpleeast?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC&allowMultiQueries=true
     type: com.alibaba.druid.pool.DruidDataSource
     #   数据源其他配置
     initialSize: 5
