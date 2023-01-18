@@ -18,7 +18,10 @@ public enum GlobalEnum {
 
     FAIL("-1","操作失败"),
     SUCCESS("0","操作成功"),
-    PARAMS_EXPRESSION("2","参数校验失败");
+    PARAMS_EXPRESSION("2","参数校验失败"),
+    USER_EXIST("3","用户已存在"),
+    ;
+
     private String code;
     private String msg;
 

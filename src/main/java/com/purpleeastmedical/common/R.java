@@ -12,20 +12,20 @@ import lombok.Data;
 public class R<T> {
     private String code;
     private String message;
-    private T date;
+    private T data;
     private static R r;
     public static <T> R success(GlobalEnum globalEnum,T t){
         r=new R();
         r.code=globalEnum.getCode();
         r.message=globalEnum.getMsg();
-        r.date=t;
+        r.data =t;
         return r;
     }
     public static <T> R fail(GlobalEnum globalEnum,T t){
         r=new R();
         r.code=globalEnum.getCode();
         r.message=globalEnum.getMsg();
-        r.date=t;
+        r.data =t;
         return r;
     }
     public static <T> R fail(GlobalEnum globalEnum){

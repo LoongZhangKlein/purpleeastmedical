@@ -48,7 +48,7 @@ public class UserController {
             throw new GlobalException(GlobalEnum.PARAMS_EXPRESSION);
         }
         UserDTO user = userService.userLogin(userMap);
-        if (userCheck.checkUser(user).length()<=0){
+        if (userCheck.checkUser(user).length()==0){
             return R.success(GlobalEnum.SUCCESS,user);
         }
         return R.fail(GlobalEnum.FAIL);
@@ -60,7 +60,7 @@ public class UserController {
      * @return
      */
     @PostMapping("/register")
-    public R userRegister(UserDTO userDTO){
+    public R userRegister(@RequestBody UserDTO userDTO){
         UserDTO userDTOResult = userService.userRegister(userDTO);
         if (userDTOResult==null){
             return R.fail(GlobalEnum.FAIL);

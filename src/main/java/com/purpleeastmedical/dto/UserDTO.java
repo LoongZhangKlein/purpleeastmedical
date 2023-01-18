@@ -14,16 +14,16 @@ import java.io.Serializable;
 @Data
 public class UserDTO implements Serializable {
 
-    @NotNull
+    private Integer id;
     private String userName;
     private String code;
-
+    @NotNull
     private String accounts;
-
+    @NotNull
     private String passWord;
-    @NotNull
+
     private String mobile;
-    @NotNull
+
     private String token;
 
     private String email;
