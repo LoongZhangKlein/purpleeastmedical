@@ -11,10 +11,7 @@ import com.purpleeastmedical.mapper.UserMapper;
 import com.purpleeastmedical.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.CollectionUtils;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.Collection;
@@ -42,15 +39,9 @@ public class UserController {
      * @return
      */
     @PostMapping("/login")
-    public R userLogin(@RequestBody Map<String,String> userMap){
-            log.info("用户登录请求信息",userMap);
-        if (CollectionUtils.isEmpty(userMap)){
-            throw new GlobalException(GlobalEnum.PARAMS_EXPRESSION);
-        }
-        UserDTO user = userService.userLogin(userMap);
-        if (userCheck.checkUser(user).length()==0){
-            return R.success(GlobalEnum.SUCCESS,user);
-        }
+    public R userLogin(@RequestBody UserDTO userDTO){
+
+
         return R.fail(GlobalEnum.FAIL);
     }
 

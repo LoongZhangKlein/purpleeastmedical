@@ -14,8 +14,8 @@ public interface UserService {
     /**
      * 用户登录
      */
-    UserDTO userLogin(Map<String,String> userMap);
-
+    String userLogin(UserDTO userDTO);
+    UserDTO userInfo(String token);
     /**
      * 用户注册模块
      * @param userDTO

@@ -41,25 +41,24 @@ public class UserServiceImpl implements UserService {
      *                type: "账户类型"
      *                verify: "验证码"
      */
+
+
     @Override
-    public UserDTO userLogin(Map<String, String> userMap) {
-        if (CollectionUtils.isEmpty(userMap)) {
-            throw new GlobalException(GlobalEnum.PARAMS_EXPRESSION);
-        }
-        LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<>();
-        queryWrapper.eq(User::getAccounts, userMap.get("accounts"));
-        queryWrapper.eq(User::getPassWord, userMap.get("passWord"));
-        User user = userMapper.selectOne(queryWrapper);
-        // 用户验证成功
-        UserDTO userDTO = new UserDTO();
-        if (user != null) {
-            // 拷贝
-            BeanUtils.copyProperties(user, userDTO);
-            String token = GenerateToken.generateToken(userDTO);
-            userDTO.setToken(token);
-            userDTO.setCode("0");
-        }
-        return userDTO;
+    public String userLogin(UserDTO userDTO) {
+        // 校验用户账号密码
+        //成功生成token 返回
+        return null;
+    }
+
+    /**
+     * 获取用户信息
+     * @param token
+     * @return
+     */
+    @Override
+    public UserDTO userInfo(String token) {
+        // 通过token获取用户信息
+        return null;
     }
 
     /**
